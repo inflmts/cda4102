@@ -1,0 +1,75 @@
+CDA4102 - Homework 4: Cache Coherence
+
+I have neither given nor received any unauthorized aid on this assignment.
+
+
+Problem 1 [6+6 points]
+~~~~~~~~~~~~~~~~~~~~~~
+
+(a) Snoopy Bus Protocol:
+
+|                   P1      P2      Bus         Memory
+| Step              S A# Va S A# Va Ac P# A# Va Value
+| ----------------- ------- ------- ----------- ------
+| P1: Write A1=3    E A1 3          WM P1 A1    A1=1 A2=2
+| P1: Read A2                       RM P1 A2
+|                                   WB P1 A1 3  A1=3
+|                   S A2 2          RD P1 A2 2
+| P2: Write A2=4    Inv     E A2 4  WM P2 A2
+| P1: Read A1                       RM P1 A1
+|                   S A1 3          RD P1 A1 3
+| P2: Read A1                       RM P2 A1
+|                                   WB P2 A2 4  A2=4
+|                           S A1 3  RD P2 A1 3
+| P1: Write A2=5    E A2 5          WM P1 A2
+| P2: Read A2                       RM P2 A2
+|                   S A2 5          WB P1 A2 5  A2=5
+|                           S A2 5  RD P2 A2 5
+
+
+(b) Directory Protocol:
+
+|                   P1      P2      Bus         Directory   Memory
+| Step              S A# Va S A# Va Ac P# A# Va A# S {Proc} Value
+| ----------------- ------- ------- ----------- ----------- ------
+| P1: Write A1=3                    WM P1 A1    A1 E {P1}   A1=1 A2=2
+|                   E A1 3          DR P1 A1 1
+| P1: Read A2                       RM P1 A2    A2 S {P1}
+|                                   WB P1 A1 3  A1 U {}     A1=3
+|                   S A2 2          DR P1 A2 2
+| P2: Write A2=4                    WM P2 A2    A2 E {P2}
+|                   Inv             IV P1 A2
+|                           E A2 4  DR P2 A2 2
+| P1: Read A1                       RM P1 A1    A1 S {P1}
+|                   S A1 3          DR P1 A1 3
+| P2: Read A1                       RM P2 A1    A1 S {P12}
+|                                   WB P2 A2 4  A2 U {}     A2=4
+|                           S A1 3  DR P2 A1 3
+| P1: Write A2=5                    WM P1 A2    A2 E {P1}
+|                   E A2 5          DR P1 A2 4
+| P2: Read A2                       RM P2 A2    A2 S {P12}
+|                   S A2 5          FE P1 A2
+|                                   WB P1 A2 5              A2=5
+|                           S A2 5  DR P2 A2 5
+
+
+Problem 2 [8 points]
+~~~~~~~~~~~~~~~~~~~~
+
+AB EF IJ MN -> b0
+CD GH KL OP -> b1
+0=Hit 1=Compulsory 2=Capacity 3=Conflict 4=TrueCoherence 5=FalseCoherence
+
+-------------------------------------------------------
+| Process | P1  P2  P1  P2  P1  P1  P2  P1  P1  P1  P2
+| Request | Rd  Wr  Wr  Rd  Rd  Rd  Rd  Rd  Rd  Wr  Wr
+| Address | A   B   A   A   M   A   C   D   O   A   A
+| ------- | --- --- --- --- --- --- --- --- --- --- ---
+| P1b0    | AB              MN  AB
+| P1b1    |                             CD  OP
+| P2b0    |     AB
+| P2b1    |                         CD
+| Hit/Mis | 1   1   4   4   3   3   1   1   3   4   4
+-------------------------------------------------------
+
+vim:ft=prabhat:sw=4:sts=4:tw=80

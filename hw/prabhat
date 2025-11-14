@@ -1,0 +1,72 @@
+#!/usr/bin/env python3
+# prabhat renderer
+
+import os
+import sys
+import time
+
+template = """\
+<!DOCTYPE html>
+<html>
+<head>
+<title>{title}</title>
+<style>
+body {{ margin: 2rem; }}
+@media print {{ body {{ margin: 0; }} }}
+pre {{ break-inside: avoid; margin: 0; }}
+pre + pre {{ margin-top: 2rem; }}
+</style>
+</head>
+<body>
+<pre>
+<strong>{title}</strong>
+<span style="color: gray">{date}</span>
+{content}</pre>
+</body>
+</html>
+"""
+
+def escape(s):
+    return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
+def main():
+    import optparse
+    parser = optparse.OptionParser(usage="%prog [options] [input [output]]")
+    opts, args = parser.parse_args()
+
+    if len(args) > 0:
+        sys.stdin.close()
+        sys.stdin = open(args[0])
+
+    if len(args) > 1:
+        sys.stdout.close()
+        sys.stdout = open(args[1], "w")
+
+    title = sys.stdin.readline().rstrip()
+    date = time.strftime("%a %b %d %Y %I:%M:%S %p %z",
+        time.localtime(os.stat(args[0]).st_mtime if args else None))
+
+    newlines = 0
+    content = []
+    for line in sys.stdin:
+        if line == "\n":
+            newlines += 1
+            continue
+        if line.startswith("vim:"):
+            continue
+        if newlines:
+            if newlines >= 2:
+                content.append("</pre><pre>\n")
+            else:
+                content.append("\n")
+            newlines = 0
+        content.append(escape(line))
+
+    sys.stdout.write(template.format(
+        title=escape(title),
+        date=escape(date),
+        content="".join(content)
+    ))
+
+if __name__ == "__main__":
+    main()
