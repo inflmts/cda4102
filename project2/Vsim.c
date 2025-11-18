@@ -199,6 +199,7 @@ cycle:
   int32_t ww = willwrite;
   int32_t wr = 0;
   int has_store = 0;
+  int limit = 4;
 
   /* Issue */
   for (int i = 0; i < 4 && (ins = pre_issue[i]); ++i) {
@@ -279,6 +280,7 @@ cycle:
     }
     pre_issue[3] = 0;
     --i;
+    --limit;
   }
 
   /* Fetch/Decode */
@@ -289,7 +291,7 @@ cycle:
   for (int i = 0; i < 2; ++i) {
     int slot = 0;
     while (pre_issue[slot]) {
-      if (++slot == 4) {
+      if (++slot == limit) {
         goto stop_fetch;
       }
     }

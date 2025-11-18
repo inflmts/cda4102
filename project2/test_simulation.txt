@@ -1,0 +1,588 @@
+--------------------
+Cycle 1:
+
+IF Unit:
+	Waiting:
+	Executed:
+Pre-Issue Queue:
+	Entry 0: [addi x1, x0, #2]
+	Entry 1: [addi x2, x0, #1]
+	Entry 2:
+	Entry 3:
+Pre-ALU1 Queue:
+	Entry 0:
+	Entry 1:
+Pre-MEM Queue:
+Post-MEM Queue:
+Pre-ALU2 Queue:
+Post-ALU2 Queue:
+Pre-ALU3 Queue:
+Post-ALU3 Queue:
+
+Registers
+x00:	0	0	0	0	0	0	0	0
+x08:	0	0	0	0	0	0	0	0
+x16:	0	0	0	0	0	0	0	0
+x24:	0	0	0	0	0	0	0	0
+Data
+308:	1	2	3	4	-1	-2	-3	-4
+--------------------
+Cycle 2:
+
+IF Unit:
+	Waiting: [beq x1, x2, #20]
+	Executed:
+Pre-Issue Queue:
+	Entry 0: [addi x2, x0, #1]
+	Entry 1:
+	Entry 2:
+	Entry 3:
+Pre-ALU1 Queue:
+	Entry 0:
+	Entry 1:
+Pre-MEM Queue:
+Post-MEM Queue:
+Pre-ALU2 Queue: [addi x1, x0, #2]
+Post-ALU2 Queue:
+Pre-ALU3 Queue:
+Post-ALU3 Queue:
+
+Registers
+x00:	0	0	0	0	0	0	0	0
+x08:	0	0	0	0	0	0	0	0
+x16:	0	0	0	0	0	0	0	0
+x24:	0	0	0	0	0	0	0	0
+Data
+308:	1	2	3	4	-1	-2	-3	-4
+--------------------
+Cycle 3:
+
+IF Unit:
+	Waiting: [beq x1, x2, #20]
+	Executed:
+Pre-Issue Queue:
+	Entry 0: [addi x2, x0, #1]
+	Entry 1:
+	Entry 2:
+	Entry 3:
+Pre-ALU1 Queue:
+	Entry 0:
+	Entry 1:
+Pre-MEM Queue:
+Post-MEM Queue:
+Pre-ALU2 Queue:
+Post-ALU2 Queue: [addi x1, x0, #2]
+Pre-ALU3 Queue:
+Post-ALU3 Queue:
+
+Registers
+x00:	0	0	0	0	0	0	0	0
+x08:	0	0	0	0	0	0	0	0
+x16:	0	0	0	0	0	0	0	0
+x24:	0	0	0	0	0	0	0	0
+Data
+308:	1	2	3	4	-1	-2	-3	-4
+--------------------
+Cycle 4:
+
+IF Unit:
+	Waiting: [beq x1, x2, #20]
+	Executed:
+Pre-Issue Queue:
+	Entry 0:
+	Entry 1:
+	Entry 2:
+	Entry 3:
+Pre-ALU1 Queue:
+	Entry 0:
+	Entry 1:
+Pre-MEM Queue:
+Post-MEM Queue:
+Pre-ALU2 Queue: [addi x2, x0, #1]
+Post-ALU2 Queue:
+Pre-ALU3 Queue:
+Post-ALU3 Queue:
+
+Registers
+x00:	0	2	0	0	0	0	0	0
+x08:	0	0	0	0	0	0	0	0
+x16:	0	0	0	0	0	0	0	0
+x24:	0	0	0	0	0	0	0	0
+Data
+308:	1	2	3	4	-1	-2	-3	-4
+--------------------
+Cycle 5:
+
+IF Unit:
+	Waiting: [beq x1, x2, #20]
+	Executed:
+Pre-Issue Queue:
+	Entry 0:
+	Entry 1:
+	Entry 2:
+	Entry 3:
+Pre-ALU1 Queue:
+	Entry 0:
+	Entry 1:
+Pre-MEM Queue:
+Post-MEM Queue:
+Pre-ALU2 Queue:
+Post-ALU2 Queue: [addi x2, x0, #1]
+Pre-ALU3 Queue:
+Post-ALU3 Queue:
+
+Registers
+x00:	0	2	0	0	0	0	0	0
+x08:	0	0	0	0	0	0	0	0
+x16:	0	0	0	0	0	0	0	0
+x24:	0	0	0	0	0	0	0	0
+Data
+308:	1	2	3	4	-1	-2	-3	-4
+--------------------
+Cycle 6:
+
+IF Unit:
+	Waiting: [beq x1, x2, #20]
+	Executed:
+Pre-Issue Queue:
+	Entry 0:
+	Entry 1:
+	Entry 2:
+	Entry 3:
+Pre-ALU1 Queue:
+	Entry 0:
+	Entry 1:
+Pre-MEM Queue:
+Post-MEM Queue:
+Pre-ALU2 Queue:
+Post-ALU2 Queue:
+Pre-ALU3 Queue:
+Post-ALU3 Queue:
+
+Registers
+x00:	0	2	1	0	0	0	0	0
+x08:	0	0	0	0	0	0	0	0
+x16:	0	0	0	0	0	0	0	0
+x24:	0	0	0	0	0	0	0	0
+Data
+308:	1	2	3	4	-1	-2	-3	-4
+--------------------
+Cycle 7:
+
+IF Unit:
+	Waiting:
+	Executed: [beq x1, x2, #20]
+Pre-Issue Queue:
+	Entry 0:
+	Entry 1:
+	Entry 2:
+	Entry 3:
+Pre-ALU1 Queue:
+	Entry 0:
+	Entry 1:
+Pre-MEM Queue:
+Post-MEM Queue:
+Pre-ALU2 Queue:
+Post-ALU2 Queue:
+Pre-ALU3 Queue:
+Post-ALU3 Queue:
+
+Registers
+x00:	0	2	1	0	0	0	0	0
+x08:	0	0	0	0	0	0	0	0
+x16:	0	0	0	0	0	0	0	0
+x24:	0	0	0	0	0	0	0	0
+Data
+308:	1	2	3	4	-1	-2	-3	-4
+--------------------
+Cycle 8:
+
+IF Unit:
+	Waiting:
+	Executed:
+Pre-Issue Queue:
+	Entry 0: [lw x3, 308(x0)]
+	Entry 1: [lw x4, 324(x0)]
+	Entry 2:
+	Entry 3:
+Pre-ALU1 Queue:
+	Entry 0:
+	Entry 1:
+Pre-MEM Queue:
+Post-MEM Queue:
+Pre-ALU2 Queue:
+Post-ALU2 Queue:
+Pre-ALU3 Queue:
+Post-ALU3 Queue:
+
+Registers
+x00:	0	2	1	0	0	0	0	0
+x08:	0	0	0	0	0	0	0	0
+x16:	0	0	0	0	0	0	0	0
+x24:	0	0	0	0	0	0	0	0
+Data
+308:	1	2	3	4	-1	-2	-3	-4
+--------------------
+Cycle 9:
+
+IF Unit:
+	Waiting:
+	Executed:
+Pre-Issue Queue:
+	Entry 0: [lw x4, 324(x0)]
+	Entry 1: [sra x3, x3, #2]
+	Entry 2: [andi x4, x4, #4]
+	Entry 3:
+Pre-ALU1 Queue:
+	Entry 0: [lw x3, 308(x0)]
+	Entry 1:
+Pre-MEM Queue:
+Post-MEM Queue:
+Pre-ALU2 Queue:
+Post-ALU2 Queue:
+Pre-ALU3 Queue:
+Post-ALU3 Queue:
+
+Registers
+x00:	0	2	1	0	0	0	0	0
+x08:	0	0	0	0	0	0	0	0
+x16:	0	0	0	0	0	0	0	0
+x24:	0	0	0	0	0	0	0	0
+Data
+308:	1	2	3	4	-1	-2	-3	-4
+--------------------
+Cycle 10:
+
+IF Unit:
+	Waiting:
+	Executed:
+Pre-Issue Queue:
+	Entry 0: [sra x3, x3, #2]
+	Entry 1: [andi x4, x4, #4]
+	Entry 2: [ori x5, x3, #4]
+	Entry 3:
+Pre-ALU1 Queue:
+	Entry 0: [lw x4, 324(x0)]
+	Entry 1:
+Pre-MEM Queue: [lw x3, 308(x0)]
+Post-MEM Queue:
+Pre-ALU2 Queue:
+Post-ALU2 Queue:
+Pre-ALU3 Queue:
+Post-ALU3 Queue:
+
+Registers
+x00:	0	2	1	0	0	0	0	0
+x08:	0	0	0	0	0	0	0	0
+x16:	0	0	0	0	0	0	0	0
+x24:	0	0	0	0	0	0	0	0
+Data
+308:	1	2	3	4	-1	-2	-3	-4
+--------------------
+Cycle 11:
+
+IF Unit:
+	Waiting:
+	Executed:
+Pre-Issue Queue:
+	Entry 0: [sra x3, x3, #2]
+	Entry 1: [andi x4, x4, #4]
+	Entry 2: [ori x5, x3, #4]
+	Entry 3: [and x6, x3, x4]
+Pre-ALU1 Queue:
+	Entry 0:
+	Entry 1:
+Pre-MEM Queue: [lw x4, 324(x0)]
+Post-MEM Queue: [lw x3, 308(x0)]
+Pre-ALU2 Queue:
+Post-ALU2 Queue:
+Pre-ALU3 Queue:
+Post-ALU3 Queue:
+
+Registers
+x00:	0	2	1	0	0	0	0	0
+x08:	0	0	0	0	0	0	0	0
+x16:	0	0	0	0	0	0	0	0
+x24:	0	0	0	0	0	0	0	0
+Data
+308:	1	2	3	4	-1	-2	-3	-4
+--------------------
+Cycle 12:
+
+IF Unit:
+	Waiting:
+	Executed:
+Pre-Issue Queue:
+	Entry 0: [sra x3, x3, #2]
+	Entry 1: [andi x4, x4, #4]
+	Entry 2: [ori x5, x3, #4]
+	Entry 3: [and x6, x3, x4]
+Pre-ALU1 Queue:
+	Entry 0:
+	Entry 1:
+Pre-MEM Queue:
+Post-MEM Queue: [lw x4, 324(x0)]
+Pre-ALU2 Queue:
+Post-ALU2 Queue:
+Pre-ALU3 Queue:
+Post-ALU3 Queue:
+
+Registers
+x00:	0	2	1	1	0	0	0	0
+x08:	0	0	0	0	0	0	0	0
+x16:	0	0	0	0	0	0	0	0
+x24:	0	0	0	0	0	0	0	0
+Data
+308:	1	2	3	4	-1	-2	-3	-4
+--------------------
+Cycle 13:
+
+IF Unit:
+	Waiting:
+	Executed:
+Pre-Issue Queue:
+	Entry 0: [andi x4, x4, #4]
+	Entry 1: [ori x5, x3, #4]
+	Entry 2: [and x6, x3, x4]
+	Entry 3:
+Pre-ALU1 Queue:
+	Entry 0:
+	Entry 1:
+Pre-MEM Queue:
+Post-MEM Queue:
+Pre-ALU2 Queue:
+Post-ALU2 Queue:
+Pre-ALU3 Queue: [sra x3, x3, #2]
+Post-ALU3 Queue:
+
+Registers
+x00:	0	2	1	1	-1	0	0	0
+x08:	0	0	0	0	0	0	0	0
+x16:	0	0	0	0	0	0	0	0
+x24:	0	0	0	0	0	0	0	0
+Data
+308:	1	2	3	4	-1	-2	-3	-4
+--------------------
+Cycle 14:
+
+IF Unit:
+	Waiting:
+	Executed:
+Pre-Issue Queue:
+	Entry 0: [andi x4, x4, #4]
+	Entry 1: [ori x5, x3, #4]
+	Entry 2: [and x6, x3, x4]
+	Entry 3: [or x7, x5, x6]
+Pre-ALU1 Queue:
+	Entry 0:
+	Entry 1:
+Pre-MEM Queue:
+Post-MEM Queue:
+Pre-ALU2 Queue:
+Post-ALU2 Queue:
+Pre-ALU3 Queue:
+Post-ALU3 Queue: [sra x3, x3, #2]
+
+Registers
+x00:	0	2	1	1	-1	0	0	0
+x08:	0	0	0	0	0	0	0	0
+x16:	0	0	0	0	0	0	0	0
+x24:	0	0	0	0	0	0	0	0
+Data
+308:	1	2	3	4	-1	-2	-3	-4
+--------------------
+Cycle 15:
+
+IF Unit:
+	Waiting:
+	Executed:
+Pre-Issue Queue:
+	Entry 0: [ori x5, x3, #4]
+	Entry 1: [and x6, x3, x4]
+	Entry 2: [or x7, x5, x6]
+	Entry 3:
+Pre-ALU1 Queue:
+	Entry 0:
+	Entry 1:
+Pre-MEM Queue:
+Post-MEM Queue:
+Pre-ALU2 Queue:
+Post-ALU2 Queue:
+Pre-ALU3 Queue: [andi x4, x4, #4]
+Post-ALU3 Queue:
+
+Registers
+x00:	0	2	1	0	-1	0	0	0
+x08:	0	0	0	0	0	0	0	0
+x16:	0	0	0	0	0	0	0	0
+x24:	0	0	0	0	0	0	0	0
+Data
+308:	1	2	3	4	-1	-2	-3	-4
+--------------------
+Cycle 16:
+
+IF Unit:
+	Waiting:
+	Executed:
+Pre-Issue Queue:
+	Entry 0: [ori x5, x3, #4]
+	Entry 1: [and x6, x3, x4]
+	Entry 2: [or x7, x5, x6]
+	Entry 3: [addi x1, x1, #-1]
+Pre-ALU1 Queue:
+	Entry 0:
+	Entry 1:
+Pre-MEM Queue:
+Post-MEM Queue:
+Pre-ALU2 Queue:
+Post-ALU2 Queue:
+Pre-ALU3 Queue:
+Post-ALU3 Queue: [andi x4, x4, #4]
+
+Registers
+x00:	0	2	1	0	-1	0	0	0
+x08:	0	0	0	0	0	0	0	0
+x16:	0	0	0	0	0	0	0	0
+x24:	0	0	0	0	0	0	0	0
+Data
+308:	1	2	3	4	-1	-2	-3	-4
+--------------------
+Cycle 17:
+
+IF Unit:
+	Waiting:
+	Executed:
+Pre-Issue Queue:
+	Entry 0: [and x6, x3, x4]
+	Entry 1: [or x7, x5, x6]
+	Entry 2:
+	Entry 3:
+Pre-ALU1 Queue:
+	Entry 0:
+	Entry 1:
+Pre-MEM Queue:
+Post-MEM Queue:
+Pre-ALU2 Queue: [addi x1, x1, #-1]
+Post-ALU2 Queue:
+Pre-ALU3 Queue: [ori x5, x3, #4]
+Post-ALU3 Queue:
+
+Registers
+x00:	0	2	1	0	4	0	0	0
+x08:	0	0	0	0	0	0	0	0
+x16:	0	0	0	0	0	0	0	0
+x24:	0	0	0	0	0	0	0	0
+Data
+308:	1	2	3	4	-1	-2	-3	-4
+--------------------
+Cycle 18:
+
+IF Unit:
+	Waiting:
+	Executed: [jal x8, #-18]
+Pre-Issue Queue:
+	Entry 0: [and x6, x3, x4]
+	Entry 1: [or x7, x5, x6]
+	Entry 2:
+	Entry 3:
+Pre-ALU1 Queue:
+	Entry 0:
+	Entry 1:
+Pre-MEM Queue:
+Post-MEM Queue:
+Pre-ALU2 Queue:
+Post-ALU2 Queue: [addi x1, x1, #-1]
+Pre-ALU3 Queue:
+Post-ALU3 Queue: [ori x5, x3, #4]
+
+Registers
+x00:	0	2	1	0	4	0	0	0
+x08:	304	0	0	0	0	0	0	0
+x16:	0	0	0	0	0	0	0	0
+x24:	0	0	0	0	0	0	0	0
+Data
+308:	1	2	3	4	-1	-2	-3	-4
+--------------------
+Cycle 19:
+
+IF Unit:
+	Waiting: [beq x1, x2, #20]
+	Executed:
+Pre-Issue Queue:
+	Entry 0: [or x7, x5, x6]
+	Entry 1:
+	Entry 2:
+	Entry 3:
+Pre-ALU1 Queue:
+	Entry 0:
+	Entry 1:
+Pre-MEM Queue:
+Post-MEM Queue:
+Pre-ALU2 Queue:
+Post-ALU2 Queue:
+Pre-ALU3 Queue: [and x6, x3, x4]
+Post-ALU3 Queue:
+
+Registers
+x00:	0	1	1	0	4	4	0	0
+x08:	304	0	0	0	0	0	0	0
+x16:	0	0	0	0	0	0	0	0
+x24:	0	0	0	0	0	0	0	0
+Data
+308:	1	2	3	4	-1	-2	-3	-4
+--------------------
+Cycle 20:
+
+IF Unit:
+	Waiting:
+	Executed: [beq x1, x2, #20]
+Pre-Issue Queue:
+	Entry 0: [or x7, x5, x6]
+	Entry 1:
+	Entry 2:
+	Entry 3:
+Pre-ALU1 Queue:
+	Entry 0:
+	Entry 1:
+Pre-MEM Queue:
+Post-MEM Queue:
+Pre-ALU2 Queue:
+Post-ALU2 Queue:
+Pre-ALU3 Queue:
+Post-ALU3 Queue: [and x6, x3, x4]
+
+Registers
+x00:	0	1	1	0	4	4	0	0
+x08:	304	0	0	0	0	0	0	0
+x16:	0	0	0	0	0	0	0	0
+x24:	0	0	0	0	0	0	0	0
+Data
+308:	1	2	3	4	-1	-2	-3	-4
+--------------------
+Cycle 21:
+
+IF Unit:
+	Waiting:
+	Executed: [break]
+Pre-Issue Queue:
+	Entry 0: [or x7, x5, x6]
+	Entry 1:
+	Entry 2:
+	Entry 3:
+Pre-ALU1 Queue:
+	Entry 0:
+	Entry 1:
+Pre-MEM Queue:
+Post-MEM Queue:
+Pre-ALU2 Queue:
+Post-ALU2 Queue:
+Pre-ALU3 Queue:
+Post-ALU3 Queue:
+
+Registers
+x00:	0	1	1	0	4	4	0	0
+x08:	304	0	0	0	0	0	0	0
+x16:	0	0	0	0	0	0	0	0
+x24:	0	0	0	0	0	0	0	0
+Data
+308:	1	2	3	4	-1	-2	-3	-4
